@@ -13,9 +13,9 @@ root.render(
     <BrowserRouter>
         <Provider store={store}>
             <Container>
-                {/* <Suspense fallback={<Loader/>}> */}
+                <Suspense fallback={<Loader/>}>
                     <App />
-                {/* </Suspense> */}
+                </Suspense>
             </Container>
         </Provider>
     </BrowserRouter>

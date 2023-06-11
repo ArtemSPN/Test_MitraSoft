@@ -18,26 +18,20 @@ function App() {
 
   return (
     <div className="App">
-        <Header handleShow={handleShow}/>
-        <Routes>
-            <Route path="/" element={
-              <Suspense fallback={<Loader/>}>
-                <MainPage />
-              </Suspense>}
-            />
-            <Route path="/about" element={
-              <Suspense fallback={<Loader/>}>
-                <AboutPage />
-              </Suspense>}
-            />
-            <Route path="/user/:id" element={
-              <Suspense fallback={<Loader/>}>
-                <UserPage />
-              </Suspense>}
+        <Row>
+          <Header handleShow={handleShow}/>
+        </Row>
+        <Row>
+          <Routes>
+              <Route path="/" element={<MainPage />}/>
+              <Route path="/about" element={<AboutPage />}
               />
-            <Route path="*" element={<MainPage />}/>
-        </Routes>
-        <Sidebar show={show} handleClose={handleClose}/>
+              <Route path="/user/:id" element={<UserPage />}
+                />
+              <Route path="*" element={<MainPage />}/>
+          </Routes>
+          <Sidebar show={show} handleClose={handleClose}/>
+        </Row>
     </div>
   );
 }

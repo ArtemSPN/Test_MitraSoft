@@ -1,3 +1,9 @@
 .cardMargin{
     margin-bottom: 5px;
 }
+
+@media (max-width: 768px) {
+    .content {
+      flex-wrap: wrap-reverse;
+    }
+  }

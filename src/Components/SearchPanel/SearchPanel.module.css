@@ -1,0 +1,16 @@
+.search{
+    display: flex;
+}
+
+.closeBtn{
+    margin: auto 0;
+}
+
+.searchBtn{
+    margin-top: 5px;
+    width: 100%;
+}
+
+.title{
+    font-size: 22px;
+}

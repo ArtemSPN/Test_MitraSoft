@@ -5,6 +5,7 @@ import { put } from 'redux-saga/effects';
 const initialState = {
   isLoading: true,
   error: false,
+  order: 'asc',
   page: localStorage.getItem('page') || 1,
   data: []
 }
@@ -33,10 +34,18 @@ export const postSlice = createSlice({
       localStorage.setItem('page', state.page - 1);
       state.page = state.page - 1;
     },
+    searchPost: (state, action) => {
+      state.data = state.data.filter(item => item.title.includes(action.payload));
+      console.log(state.data)
+    },
+    changeOrder: (state, action) => {
+      state.order = action.payload;
+      localStorage.setItem('order' ,action.payload);
+    },
   },
 })
 
-export const { getPostsSuccess, nextPostPage, prevPostPage} = postSlice.actions
+export const { getPostsSuccess, nextPostPage, prevPostPage, searchPost, changeOrder} = postSlice.actions
 export const GET_POSTS = 'posts/getPosts';
 export const getPosts = createAction(GET_POSTS)
 
